@@ -1,0 +1,70 @@
+@mixin center {
+  align-items: center;
+  justify-content: center;
+}
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  @include row();
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 100%;
+  height: var(--nav-size);
+  top: 0;
+  right: 0;
+  box-shadow: var(--box-shadow);
+  &--logo {
+    height: 35%;
+    margin-left: 2%;
+    cursor: pointer;
+  }
+  &--list {
+    @include row();
+    @include center();
+    height: 100%;
+    gap: 100px;
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    &__gap5 {
+      @include row();
+      @include center();
+      gap: 5px;
+    }
+    &__gap10 {
+      @include row();
+      @include center();
+      gap: 10px;
+    }
+    &__gap15 {
+      @include row();
+      @include center();
+      gap: 15px;
+    }
+    &__gap20 {
+      @include row();
+      @include center();
+      gap: 20px;
+    }
+  }
+  &__group {
+    height: 100%;
+    margin-right: 2%;
+    @include center();
+    @include row();
+    gap: 30px;
+    &--notify {
+      cursor: pointer;
+    }
+    &--notify:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,100 @@
+%buttonStyle {
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-size);
+  background-color: var(--white);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 8px 20px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.default {
+  @extend %buttonStyle;
+}
+
+.light {
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }
+}
+
+.dark {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+.highlight {
+  background-color: var(--primary-color);
+  color: var(--white);
+  &:hover {
+    background-color: var(--primary-light-color);
+    color: var(--white);
+  }
+}
+
+.icon {
+  border-radius: var(--radius-size-smallsmall);
+  color: var(--gray-300);
+  gap: 3px;
+  &:hover {
+    background-color: var(--gray-light-light);
+    color: var(--secondary-color);
+  }
+}
+
+.disable {
+  pointer-events: none;
+  background-color: var(--gray-light);
+  color: var(--secondary-color);
+}
+
+.large {
+  font-size: 20px;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.textHighLight {
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.badge {
+  background-color: var(--gray-light-light);
+  border-radius: var(--radius-size);
+  font-size: 12px;
+  padding: 2px 4px;
+  min-width: 20px;
+  display: grid;
+  place-items: center;
+  color: var(--secondary-color);
+}
+
+%buttonStyle:hover .badge {
+  color: var(--primary-color);
+}
+%buttonStyle:hover {
+  transform: scale(1.05);
+}
+
+.link {
+  text-decoration-line: underline;
+  &:hover {
+    color: var(--gray);
+  }
+}
